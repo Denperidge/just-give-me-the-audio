@@ -1,7 +1,7 @@
 $scriptDir = "app"
 
 New-Item -Name $scriptDir -ItemType "directory"
-Move-Item -Path ./* -Destination "setup" 
+Move-Item -Path @("Download-Scripts.ps1", "install.bat") -Destination $scriptDir
 Set-Location $scriptDir
 
 Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/app/Variables.ps1" -OutFile "Variables.ps1"
