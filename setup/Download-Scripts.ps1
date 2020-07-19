@@ -12,7 +12,7 @@ Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the
 . .\Variables.ps1
 
 Set-Location ..
-Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/mp3.bat"
+Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/mp3.bat" -OutFile "mp3.bat"
 
 
 foreach ($format in $audioformats) {
