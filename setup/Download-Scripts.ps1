@@ -6,7 +6,9 @@ if (!(Test-Path "Variables.ps1")) {
     New-Item -Name $scriptDir -ItemType "directory"
     Move-Item -Path @("Download-Scripts.ps1", "install.bat") -Destination $scriptDir
     Set-Location $scriptDir
-} elseif (!$args[1] -match $updatingSelf) {
+} 
+# If in the app directory and it has to update itself, do that
+elseif ($args[1] -match $updatingSelf) {
     # If already in the app directory and not already updating self, also update self
     Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/setup/Download-Scripts.ps1" -OutFile "Download-Scripts.ps1"
     Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/setup/install.bat" -OutFile "install.bat"
