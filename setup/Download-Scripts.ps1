@@ -1,8 +1,18 @@
 $scriptDir = "app"
 
-New-Item -Name $scriptDir -ItemType "directory"
-Move-Item -Path @("Download-Scripts.ps1", "install.bat") -Destination $scriptDir
-Set-Location $scriptDir
+# If not in app directory, create and move towards it
+if (!(Test-Path "Variables.ps1")) {
+    New-Item -Name $scriptDir -ItemType "directory"
+    Move-Item -Path @("Download-Scripts.ps1", "install.bat") -Destination $scriptDir
+    Set-Location $scriptDir
+} else {
+    # If already in the app directory, also update self
+    Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/setup/Download-Scripts.ps1" -OutFile "Download-Scripts.ps1"
+    Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/setup/install.bat" -OutFile "install.bat"
+    # Run new updater and exit self woops
+    & .\Download-Scripts.ps1
+    exit
+}
 
 Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/app/Variables.ps1" -OutFile "Variables.ps1"
 Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/app/Download-Binaries.ps1" -OutFile "Download-Binaries.ps1"
