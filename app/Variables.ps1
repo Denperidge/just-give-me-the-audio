@@ -1,8 +1,8 @@
+$BinariesDir = "bin"
 $OutputDir = "../output/"
-$ffmpegUnzipdir = "ffmpeg/"
+$ffmpegUnzipdir = "$BinariesDir/ffmpeg/"
 $ffmpegZipname = "ffmpeg.zip"
-$youtubeDLname = "bin/youtube-dl.exe"
-$ffmpegName = "bin/ffmpeg.exe"
+$youtubeDLname = "$BinariesDir/yt-dlp.exe"
+$ffmpegName = "$BinariesDir/ffmpeg.exe"
 $AudioFormats = @("aac", "flac", "mp3", "m4a", "opus", "vorbis", "wav")
 $VideoFormats = @("mkv", "mp4", "ogg", "webm", "flv")
-$BinariesDir = "bin"

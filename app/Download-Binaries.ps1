@@ -9,11 +9,11 @@ if (!(Test-Path $BinariesDir)) {
 }
 
 if (!(Test-Path $youtubeDLname)) {
-    Invoke-WebRequest "https://youtube-dl.org/downloads/latest/youtube-dl.exe" -Outfile $youtubeDLname
+    Invoke-WebRequest "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" -Outfile $youtubeDLname
 }
 
 if (!(Test-Path $ffmpegName)) {
-    Invoke-WebRequest "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-4.3-win64-static.zip" -Outfile $ffmpegZipname
+    Invoke-WebRequest "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip" -Outfile $ffmpegZipname
     Expand-Archive -Path $ffmpegZipname -DestinationPath $ffmpegUnzipdir
     
     Get-ChildItem $ffmpegUnzipdir -Recurse "*.exe" | Move-Item -Destination $BinariesDir
