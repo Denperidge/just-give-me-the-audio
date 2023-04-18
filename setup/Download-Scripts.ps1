@@ -28,9 +28,6 @@ Set-Location ..
 Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the-audio/main/mp3.bat" -OutFile "mp3.bat"
 
 
-$formats = $AudioFormats + $VideoFormats
-foreach ($format in $AudioFormats) {
-    
+foreach ($format in $AutoSetupFormats) {
     Copy-Item -Path "mp3.bat" -Destination "$format.bat"
-
 }

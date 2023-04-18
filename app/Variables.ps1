@@ -6,3 +6,4 @@ $youtubeDLname = "$BinariesDir/yt-dlp.exe"
 $ffmpegName = "$BinariesDir/ffmpeg.exe"
 $AudioFormats = @("aac", "flac", "mp3", "m4a", "opus", "vorbis", "wav")
 $VideoFormats = @("mkv", "mp4", "ogg", "webm", "flv")
+$AutoSetupFormats = @("flac", "wav", "mp4", "webm")  # Don't include mp3, as this is the base script
