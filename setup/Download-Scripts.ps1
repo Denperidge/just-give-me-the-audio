@@ -4,7 +4,7 @@ $updatingSelf = "updating-self"
 # If not in app directory, create and move towards it
 if (!(Test-Path "Variables.ps1")) {
     New-Item -Name $scriptDir -ItemType "directory"
-    Move-Item -Path @("Download-Scripts.ps1", "install.bat") -Destination $scriptDir
+    Move-Item -Path @("Download-Scripts.ps1", "..\install.bat") -Destination $scriptDir
     Set-Location $scriptDir
 } 
 # If in the app directory and it has to update itself, do that
