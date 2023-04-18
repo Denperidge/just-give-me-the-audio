@@ -12,7 +12,7 @@ if (!(Test-Path $youtubeDLname)) {
     Invoke-WebRequest "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" -Outfile $youtubeDLname
 }
 
-if (!(Test-Path $ffmpegName)) {
+if (!(Test-Path "$BinariesDir/ffmpeg.exe")) {
     Invoke-WebRequest "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip" -Outfile $ffmpegZipname
     Expand-Archive -Path $ffmpegZipname -DestinationPath $ffmpegUnzipdir
     
