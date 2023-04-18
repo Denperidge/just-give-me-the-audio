@@ -29,6 +29,7 @@ Invoke-WebRequest "https://raw.githubusercontent.com/Denperidge/just-give-me-the
 
 
 foreach ($format in $AudioFormats) {
+    Write-Output $format
     if (!$format -match "mp3") {
         Copy-Item -Path "mp3.bat" -Destination "$format.bat"
     }
