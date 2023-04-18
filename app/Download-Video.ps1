@@ -20,7 +20,7 @@ $ytdlArgs = @(
     "--format", "bestvideo+bestaudio",
     "--audio-quality", "0",
     "--output", "$OutputDir/%(title)s.%(ext)s",
-    "--ffmpeg-location", "app/$ffmpegName"
+    "--ffmpeg-location", $BinariesDir
     )
 $ytdlArgs = $ytdlArgs + $DownloadOpts
 
